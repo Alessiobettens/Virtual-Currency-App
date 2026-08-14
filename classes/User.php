@@ -82,4 +82,21 @@ class User
 
         return $statement->execute();
     }
+
+    public static function findByEmail(string $email): ?array
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare(
+            "SELECT * FROM users WHERE email = :email"
+        );
+
+        $statement->bindValue(':email', $email);
+
+        $statement->execute();
+
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $user ?: null;
+    }
 }

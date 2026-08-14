@@ -2,15 +2,6 @@
 
 require_once 'classes/User.php';
 
-$user = new User();
+$user = User::findByEmail("alessio@student.thomasmore.be");
 
-$user->setFullname("Alessio Bettens");
-$user->setEmail("alessio@student.thomasmore.be");
-$user->setPassword("test123");
-$user->setBalance(10);
-
-echo $user->getFullname();
-echo "<br>";
-echo $user->getEmail();
-echo "<br>";
-echo $user->getBalance();
+var_dump($user);
