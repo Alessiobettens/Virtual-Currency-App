@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Db.php';
+
 class User
 {
     private int $id;
@@ -60,5 +62,24 @@ class User
     public function setBalance(float $balance): void
     {
         $this->balance = $balance;
+    }
+
+    // SAVE USER
+
+    public function save(): bool
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare(
+            "INSERT INTO users (fullname, email, password, balance)
+            VALUES (:fullname, :email, :password, :balance)"
+        );
+
+        $statement->bindValue(':fullname', $this->fullname);
+        $statement->bindValue(':email', $this->email);
+        $statement->bindValue(':password', $this->password);
+        $statement->bindValue(':balance', $this->balance);
+
+        return $statement->execute();
     }
 }

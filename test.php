@@ -6,6 +6,7 @@ $user = new User();
 
 $user->setFullname("Alessio Bettens");
 $user->setEmail("alessio@student.thomasmore.be");
+$user->setPassword("test123");
 $user->setBalance(10);
 
 echo $user->getFullname();
