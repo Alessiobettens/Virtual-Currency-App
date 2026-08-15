@@ -99,4 +99,21 @@ class User
 
         return $user ?: null;
     }
+
+    public static function getById(int $id): ?array
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare(
+            "SELECT * FROM users WHERE id = :id"
+        );
+
+        $statement->bindValue(':id', $id);
+
+        $statement->execute();
+
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $user ?: null;
+    }
 }

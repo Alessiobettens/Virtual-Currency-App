@@ -2,6 +2,6 @@
 
 require_once 'classes/User.php';
 
-$user = User::findByEmail("alessio@student.thomasmore.be");
+$user = User::getById(1);
 
 var_dump($user);
