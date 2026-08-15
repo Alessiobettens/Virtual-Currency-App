@@ -17,7 +17,8 @@ if (!empty($_POST)) {
 
         $_SESSION['user_id'] = $user['id'];
 
-        echo "Login gelukt!";
+        header("Location: dashboard.php");
+        exit;
     } else {
         $message = "Email of wachtwoord is fout.";
     }
