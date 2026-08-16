@@ -95,4 +95,21 @@ class Transaction
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function getById(int $id): ?array
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare(
+            "SELECT * FROM transactions WHERE id = :id"
+        );
+
+        $statement->bindValue(':id', $id);
+
+        $statement->execute();
+
+        $transaction = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $transaction ?: null;
+    }
 }
