@@ -1,7 +1,12 @@
 <?php
 
-require_once 'classes/User.php';
+require_once 'classes/Transaction.php';
 
-$user = User::getById(1);
+$transaction = new Transaction();
 
-var_dump($user);
+$transaction->setAmount(5);
+$transaction->setMessage("Bedankt voor de hulp");
+
+echo $transaction->getAmount();
+echo "<br>";
+echo $transaction->getMessage();
