@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Db.php';
+
 class Transaction
 {
     private int $id;
@@ -60,5 +62,24 @@ class Transaction
     public function setMessage(string $message): void
     {
         $this->message = $message;
+    }
+
+    public function save(): bool
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare(
+            "INSERT INTO transactions
+            (sender_id, receiver_id, amount, message)
+            VALUES
+            (:sender_id, :receiver_id, :amount, :message)"
+        );
+
+        $statement->bindValue(':sender_id', $this->senderId);
+        $statement->bindValue(':receiver_id', $this->receiverId);
+        $statement->bindValue(':amount', $this->amount);
+        $statement->bindValue(':message', $this->message);
+
+        return $statement->execute();
     }
 }

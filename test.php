@@ -4,9 +4,11 @@ require_once 'classes/Transaction.php';
 
 $transaction = new Transaction();
 
+$transaction->setSenderId(1);
+$transaction->setReceiverId(1);
 $transaction->setAmount(5);
-$transaction->setMessage("Bedankt voor de hulp");
+$transaction->setMessage("Test transactie");
 
-echo $transaction->getAmount();
-echo "<br>";
-echo $transaction->getMessage();
+if ($transaction->save()) {
+    echo "Transactie opgeslagen!";
+}
