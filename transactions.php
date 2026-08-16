@@ -30,4 +30,10 @@ $transactions = Transaction::getAll();
         <?php echo htmlspecialchars($transaction['message']); ?>
     </p>
 
+    <p>
+        <a href="transaction.php?id=<?php echo $transaction['id']; ?>">
+            Transaction #<?php echo $transaction['id']; ?>
+        </a>
+    </p>
+
 <?php endforeach; ?>
