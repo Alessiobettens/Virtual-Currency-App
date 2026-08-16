@@ -15,4 +15,3 @@ $transaction = Transaction::getById($id);
 <p>Receiver: <?php echo $transaction['receiver_id']; ?></p>
 <p>Amount: <?php echo $transaction['amount']; ?></p>
 <p>Message: <?php echo htmlspecialchars($transaction['message']); ?></p>
-``
