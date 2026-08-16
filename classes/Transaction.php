@@ -82,4 +82,17 @@ class Transaction
 
         return $statement->execute();
     }
+
+    public static function getAll(): array
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare(
+            "SELECT * FROM transactions ORDER BY id DESC"
+        );
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
