@@ -43,6 +43,8 @@ if (!empty($_POST)) {
 }
 ?>
 
+<h1>Transfer Tokens</h1>
+
 <form method="post">
     <p><?php echo htmlspecialchars($message); ?></p>
 
