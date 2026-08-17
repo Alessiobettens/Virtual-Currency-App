@@ -21,7 +21,9 @@ $user = User::getById($_SESSION['user_id']);
 
 <p>
     Balance:
-    <?php echo htmlspecialchars($user['balance']); ?>
+    <span id="balance">
+        <?php echo htmlspecialchars($user['balance']); ?>
+    </span>
     tokens
 </p>
 
@@ -38,3 +40,19 @@ $user = User::getById($_SESSION['user_id']);
 <p>
     <a href="logout.php">Logout</a>
 </p>
+
+<script>
+
+    setInterval(() => {
+
+        fetch('ajax/getBalance.php')
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById('balance').innerText = data;
+
+            });
+
+    }, 10000);
+
+</script>
