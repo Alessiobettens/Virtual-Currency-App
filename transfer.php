@@ -14,10 +14,10 @@ $message = "";
 if (!empty($_POST)) {
 
     if ($_POST['amount'] < 1) {
-
     $message = "Amount must be at least 1";
-
-    } else {
+    }
+    
+    else {
 
         $transaction = new Transaction();
 
