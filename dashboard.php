@@ -10,24 +10,31 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user = User::getById($_SESSION['user_id']);
+
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-</head>
-<body>
-
-<h1>Welkom <?php echo htmlspecialchars($user['fullname']); ?></h1>
+<h1>Dashboard</h1>
 
 <p>
-    Saldo:
+    Welcome <?php echo htmlspecialchars($user['fullname']); ?>
+</p>
+
+<p>
+    Balance:
     <?php echo htmlspecialchars($user['balance']); ?>
     tokens
 </p>
 
-<a href="logout.php">Uitloggen</a>
+<hr>
 
-</body>
-</html>
+<p>
+    <a href="transfer.php">Transfer Tokens</a>
+</p>
+
+<p>
+    <a href="transactions.php">View Transactions</a>
+</p>
+
+<p>
+    <a href="logout.php">Logout</a>
+</p>
