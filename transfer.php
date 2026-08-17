@@ -13,15 +13,22 @@ $message = "";
 
 if (!empty($_POST)) {
 
-    $transaction = new Transaction();
+    if ($_POST['amount'] < 1) {
 
-    $transaction->setSenderId(1);
-    $transaction->setReceiverId((int)$_POST['receiver_id']);
-    $transaction->setAmount((float)$_POST['amount']);
-    $transaction->setMessage($_POST['message']);
+    $message = "Amount must be at least 1";
 
-    if ($transaction->save()) {
-        $message = "Transfer succesvol!";
+    } else {
+
+        $transaction = new Transaction();
+
+        $transaction->setSenderId(1);
+        $transaction->setReceiverId((int)$_POST['receiver_id']);
+        $transaction->setAmount((float)$_POST['amount']);
+        $transaction->setMessage($_POST['message']);
+
+        if ($transaction->save()) {
+            $message = "Transfer succesvol!";
+        }
     }
 }
 ?>
