@@ -80,6 +80,10 @@ if (!empty($_POST)) {
                 Registreren
             </button>
 
+            <p>
+                <a href="login.php">Back to Login</a>
+            </p>
+
         </form>
     </div>
 </div>
