@@ -42,27 +42,41 @@ if (!empty($_POST)) {
     }
 }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Tokens</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
 
 <h1>Transfer Tokens</h1>
 
-<form method="post">
-    <p><?php echo htmlspecialchars($message); ?></p>
+        <form method="post">
+            <p><?php echo htmlspecialchars($message); ?></p>
 
 
-    <input type="number" name="receiver_id" placeholder="Receiver ID">
+            <input type="number" name="receiver_id" placeholder="Receiver ID">
 
-    <br><br>
+            <br><br>
 
-    <input type="number" name="amount" placeholder="Amount">
+            <input type="number" name="amount" placeholder="Amount">
 
-    <br><br>
+            <br><br>
 
-    <textarea name="message"></textarea>
+            <textarea name="message"></textarea>
 
-    <br><br>
+            <br><br>
 
-    <button type="submit">
-        Send
-    </button>
+            <button type="submit">
+                Send
+            </button>
 
-</form>
+        </form>
+    </div>
+</div>
+</body>
+</html>
