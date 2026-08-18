@@ -28,37 +28,41 @@ if (!empty($_POST)) {
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
     <p><?php echo htmlspecialchars($message); ?></p>
 
-<h1>Login</h1>
+<div class="container">
+    <div class="card">
+        <h1>Login</h1>
 
-<form method="post">
+        <form method="post">
 
-    <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-    >
+            <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+            >
 
-    <br><br>
+            <br><br>
 
-    <input
-        type="password"
-        name="password"
-        placeholder="Wachtwoord"
-        required
-    >
+            <input
+                type="password"
+                name="password"
+                placeholder="Wachtwoord"
+                required
+            >
 
-    <br><br>
+            <br><br>
 
-    <button type="submit">
-        Login
-    </button>
+            <button type="submit">
+                Login
+            </button>
 
-</form>
-
+        </form>
+    </div>    
+</div>
 </body>
 </html>
