@@ -46,38 +46,42 @@ if (!empty($_POST)) {
 <html>
 <head>
     <title>Registreren</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
 
-<h1>Registreren</h1>
+<div class="container">
+    <div class="card">
+        <h1>Registreren</h1>
 
-<p><?php echo $message; ?></p>
+        <p><?php echo $message; ?></p>
 
-<form method="post">
+        <form method="post">
 
-    <label>Volledige naam</label>
-    <br>
-    <input type="text" name="fullname" required>
+            <label>Volledige naam</label>
+            <br>
+            <input type="text" name="fullname" required>
 
-    <br><br>
+            <br><br>
 
-    <label>Email</label>
-    <br>
-    <input type="email" name="email" required>
+            <label>Email</label>
+            <br>
+            <input type="email" name="email" required>
 
-    <br><br>
+            <br><br>
 
-    <label>Wachtwoord</label>
-    <br>
-    <input type="password" name="password" required>
+            <label>Wachtwoord</label>
+            <br>
+            <input type="password" name="password" required>
 
-    <br><br>
+            <br><br>
 
-    <button type="submit">
-        Registreren
-    </button>
+            <button type="submit">
+                Registreren
+            </button>
 
-</form>
-
+        </form>
+    </div>
+</div>
 </body>
 </html>
