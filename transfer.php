@@ -75,6 +75,10 @@ if (!empty($_POST)) {
                 Send
             </button>
 
+            <p>
+                <a href="dashboard.php">Back to Dashboard</a>
+            </p>
+
         </form>
     </div>
 </div>
