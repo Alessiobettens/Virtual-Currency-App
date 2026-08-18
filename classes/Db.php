@@ -8,9 +8,9 @@ class Db
     {
         if (self::$conn === null) {
             self::$conn = new PDO(
-                "mysql:host=localhost;dbname=xd_wallet",
-                "root",
-                ""
+                "mysql:host=sql307.infinityfree.com;dbname=if0_42686919_xd_wallet",
+                "if0_42686919",
+                "XdWallet123"
             );
 
             self::$conn->setAttribute(
