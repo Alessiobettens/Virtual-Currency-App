@@ -13,33 +13,41 @@ $user = User::getById($_SESSION['user_id']);
 
 ?>
 
-<h1>Dashboard</h1>
+<div class="container">
+<link rel="stylesheet" type="text/css" href="assets/style.css">
+    <div class="card">
 
-<p>
-    Welcome <?php echo htmlspecialchars($user['fullname']); ?>
-</p>
+        <h1>Dashboard</h1>
 
-<p>
-    Balance:
-    <span id="balance">
-        <?php echo htmlspecialchars($user['balance']); ?>
-    </span>
-    tokens
-</p>
+        <p>
+            Welcome <?php echo htmlspecialchars($user['fullname']); ?>
+        </p>
 
-<hr>
+        <p>
+            Balance:
+            <span id="balance">
+                <?php echo htmlspecialchars($user['balance']); ?>
+            </span>
+            tokens
+        </p>
 
-<p>
-    <a href="transfer.php">Transfer Tokens</a>
-</p>
+        <hr>
 
-<p>
-    <a href="transactions.php">View Transactions</a>
-</p>
+        <p>
+            <a href="transfer.php">Transfer Tokens</a>
+        </p>
 
-<p>
-    <a href="logout.php">Logout</a>
-</p>
+        <p>
+            <a href="transactions.php">View Transactions</a>
+        </p>
+
+        <p>
+            <a href="logout.php">Logout</a>
+        </p>
+
+    </div>
+
+</div>
 
 <script>
 
