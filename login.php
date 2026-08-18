@@ -61,6 +61,10 @@ if (!empty($_POST)) {
                 Login
             </button>
 
+            <p>
+                <a href="register.php">Nog geen account? Registreer hier</a>
+            </p>
+
         </form>
     </div>    
 </div>
