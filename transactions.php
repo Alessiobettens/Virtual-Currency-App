@@ -5,6 +5,16 @@ require_once 'classes/Transaction.php';
 $transactions = Transaction::getAll();
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transactions</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
 
 <h1>Transactions</h1>
 
@@ -37,3 +47,6 @@ $transactions = Transaction::getAll();
     </p>
 
 <?php endforeach; ?>
+
+</body>
+</html>
