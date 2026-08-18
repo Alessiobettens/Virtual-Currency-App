@@ -67,7 +67,7 @@ if (!empty($_POST)) {
 
             <br><br>
 
-            <textarea name="message"></textarea>
+            <textarea name="message" rows="5" cols="50" placeholder="Message"></textarea>
 
             <br><br>
 
